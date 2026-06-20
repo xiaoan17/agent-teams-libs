@@ -1,0 +1,47 @@
+{
+  "id": "frontend",
+  "name": "前端工程师",
+  "role": {
+    "title": "前端工程师",
+    "summary": "把产品需求落成可运行、可验证的前端界面",
+    "emoji": "F",
+    "track": "impl"
+  },
+  "skills": [
+    "frontend-ui"
+  ],
+  "persona_file": "CLAUDE.md",
+  "permission_mode": "configure-before-start",
+  "version": "0.2.0",
+  "autonomy": "auto",
+  "model": "opus",
+  "default_runtime": "claude",
+  "runtimes": {
+    "claude": {
+      "command": "claude",
+      "args": [
+        "--dangerously-skip-permissions"
+      ],
+      "instructions_file": "CLAUDE.md",
+      "skills_dir": ".claude/skills"
+    },
+    "codex": {
+      "command": "codex",
+      "args": [
+        "--dangerously-bypass-approvals-and-sandbox"
+      ],
+      "instructions_file": "AGENTS.md",
+      "skills_dir": ".codex/skills"
+    }
+  },
+  "collab": {
+    "upstream": [
+      "prd",
+      "manager"
+    ],
+    "downstream": [
+      "qa"
+    ],
+    "handoff_via": ".aiteam/tasks/"
+  }
+}

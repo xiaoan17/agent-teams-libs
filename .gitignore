@@ -1,0 +1,50 @@
+# ─────────────────────────────────────────────────────────────
+# Secrets — never commit real API keys / credentials
+# ─────────────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+**/.env
+!**/.env.example
+*.key
+*.pem
+secrets.*
+
+# ─────────────────────────────────────────────────────────────
+# Python virtualenvs & caches (skill runtime deps)
+# ─────────────────────────────────────────────────────────────
+.venv/
+**/.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ─────────────────────────────────────────────────────────────
+# Node / Bun (skill runtime deps)
+# ─────────────────────────────────────────────────────────────
+node_modules/
+**/node_modules/
+.npm/
+.pnpm-store/
+
+# ─────────────────────────────────────────────────────────────
+# Agent runtime / task handoff working dirs (local only)
+# ─────────────────────────────────────────────────────────────
+.aiteam/
+**/.aiteam/
+
+# ─────────────────────────────────────────────────────────────
+# OS / editor cruft
+# ─────────────────────────────────────────────────────────────
+.DS_Store
+**/.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/

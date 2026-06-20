@@ -1,0 +1,47 @@
+{
+  "id": "backend",
+  "name": "后端工程师",
+  "role": {
+    "title": "后端工程师",
+    "summary": "服务端专精执行者：API、数据库、业务逻辑",
+    "emoji": "B",
+    "track": "impl"
+  },
+  "skills": [
+    "backend-api"
+  ],
+  "persona_file": "CLAUDE.md",
+  "permission_mode": "configure-before-start",
+  "version": "0.2.0",
+  "autonomy": "auto",
+  "model": "opus",
+  "default_runtime": "claude",
+  "runtimes": {
+    "claude": {
+      "command": "claude",
+      "args": [
+        "--dangerously-skip-permissions"
+      ],
+      "instructions_file": "CLAUDE.md",
+      "skills_dir": ".claude/skills"
+    },
+    "codex": {
+      "command": "codex",
+      "args": [
+        "--dangerously-bypass-approvals-and-sandbox"
+      ],
+      "instructions_file": "AGENTS.md",
+      "skills_dir": ".codex/skills"
+    }
+  },
+  "collab": {
+    "upstream": [
+      "manager"
+    ],
+    "downstream": [
+      "frontend",
+      "qa"
+    ],
+    "handoff_via": ".aiteam/tasks/"
+  }
+}

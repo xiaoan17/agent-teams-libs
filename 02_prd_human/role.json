@@ -1,0 +1,47 @@
+{
+  "id": "prd",
+  "name": "产品经理",
+  "role": {
+    "title": "产品经理 (PM)",
+    "summary": "需求中枢：把模糊想法变成清晰、可执行的 PRD",
+    "emoji": "P",
+    "track": "product"
+  },
+  "skills": [
+    "prd-authoring"
+  ],
+  "persona_file": "CLAUDE.md",
+  "permission_mode": "configure-before-start",
+  "version": "0.2.0",
+  "autonomy": "human",
+  "model": "opus",
+  "default_runtime": "claude",
+  "runtimes": {
+    "claude": {
+      "command": "claude",
+      "args": [
+        "--dangerously-skip-permissions"
+      ],
+      "instructions_file": "CLAUDE.md",
+      "skills_dir": ".claude/skills"
+    },
+    "codex": {
+      "command": "codex",
+      "args": [
+        "--dangerously-bypass-approvals-and-sandbox"
+      ],
+      "instructions_file": "AGENTS.md",
+      "skills_dir": ".codex/skills"
+    }
+  },
+  "collab": {
+    "upstream": [
+      "user"
+    ],
+    "downstream": [
+      "manager",
+      "design"
+    ],
+    "handoff_via": ".aiteam/tasks/"
+  }
+}

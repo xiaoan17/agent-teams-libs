@@ -1,0 +1,49 @@
+{
+  "id": "manager",
+  "name": "CTO / 技术负责人",
+  "role": {
+    "title": "CTO / 技术负责人",
+    "summary": "技术决策中枢与编排者：拆解需求、分发任务、终审产出",
+    "emoji": "C",
+    "track": "orchestrator"
+  },
+  "skills": [
+    "tech-orchestration"
+  ],
+  "persona_file": "CLAUDE.md",
+  "permission_mode": "configure-before-start",
+  "version": "0.2.0",
+  "autonomy": "human",
+  "model": "opus",
+  "default_runtime": "claude",
+  "runtimes": {
+    "claude": {
+      "command": "claude",
+      "args": [
+        "--dangerously-skip-permissions"
+      ],
+      "instructions_file": "CLAUDE.md",
+      "skills_dir": ".claude/skills"
+    },
+    "codex": {
+      "command": "codex",
+      "args": [
+        "--dangerously-bypass-approvals-and-sandbox"
+      ],
+      "instructions_file": "AGENTS.md",
+      "skills_dir": ".codex/skills"
+    }
+  },
+  "collab": {
+    "upstream": [
+      "prd"
+    ],
+    "downstream": [
+      "backend",
+      "frontend",
+      "fullstack",
+      "qa"
+    ],
+    "handoff_via": ".aiteam/tasks/"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "techlead",
+  "name": "技术 Leader / 工程经理",
+  "role": {
+    "title": "技术 Leader / 工程经理（可选）",
+    "summary": "工程过程管理者：排期、协调多个工程 Agent、追踪进度",
+    "emoji": "L",
+    "track": "orchestrator"
+  },
+  "skills": [
+    "eng-coordination"
+  ],
+  "persona_file": "CLAUDE.md",
+  "permission_mode": "configure-before-start",
+  "version": "0.2.0",
+  "autonomy": "auto",
+  "model": "opus",
+  "default_runtime": "claude",
+  "runtimes": {
+    "claude": {
+      "command": "claude",
+      "args": [
+        "--dangerously-skip-permissions"
+      ],
+      "instructions_file": "CLAUDE.md",
+      "skills_dir": ".claude/skills"
+    },
+    "codex": {
+      "command": "codex",
+      "args": [
+        "--dangerously-bypass-approvals-and-sandbox"
+      ],
+      "instructions_file": "AGENTS.md",
+      "skills_dir": ".codex/skills"
+    }
+  },
+  "collab": {
+    "upstream": [
+      "manager"
+    ],
+    "downstream": [
+      "backend",
+      "frontend",
+      "fullstack"
+    ],
+    "handoff_via": ".aiteam/tasks/"
+  },
+  "enabled": false,
+  "stage": "scale-only"
+}

@@ -1,0 +1,48 @@
+{
+  "id": "data",
+  "name": "数据分析师",
+  "role": {
+    "title": "数据分析师",
+    "summary": "决策依据提供者：分析数据、产出报表与洞察",
+    "emoji": "A",
+    "track": "data"
+  },
+  "skills": [
+    "data-analysis"
+  ],
+  "persona_file": "CLAUDE.md",
+  "permission_mode": "configure-before-start",
+  "version": "0.2.0",
+  "autonomy": "auto",
+  "model": "opus",
+  "default_runtime": "claude",
+  "runtimes": {
+    "claude": {
+      "command": "claude",
+      "args": [
+        "--dangerously-skip-permissions"
+      ],
+      "instructions_file": "CLAUDE.md",
+      "skills_dir": ".claude/skills"
+    },
+    "codex": {
+      "command": "codex",
+      "args": [
+        "--dangerously-bypass-approvals-and-sandbox"
+      ],
+      "instructions_file": "AGENTS.md",
+      "skills_dir": ".codex/skills"
+    }
+  },
+  "collab": {
+    "upstream": [
+      "prd",
+      "manager"
+    ],
+    "downstream": [
+      "prd",
+      "manager"
+    ],
+    "handoff_via": ".aiteam/tasks/"
+  }
+}

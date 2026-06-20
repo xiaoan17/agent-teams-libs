@@ -1,0 +1,55 @@
+{
+  "id": "design",
+  "name": "UI/UX 设计师",
+  "role": {
+    "title": "UI/UX 设计师",
+    "summary": "体验与视觉负责者：交互流程、视觉风格、原型、设计规范",
+    "emoji": "D",
+    "track": "design"
+  },
+  "skills": [
+    "ui-ux-design",
+    "baoyu-image-gen",
+    "baoyu-cover-image",
+    "baoyu-article-illustrator",
+    "baoyu-xhs-images",
+    "baoyu-infographic",
+    "baoyu-comic",
+    "baoyu-slide-deck",
+    "baoyu-diagram",
+    "logo-generator"
+  ],
+  "persona_file": "CLAUDE.md",
+  "permission_mode": "configure-before-start",
+  "version": "0.2.0",
+  "autonomy": "human",
+  "model": "opus",
+  "default_runtime": "claude",
+  "runtimes": {
+    "claude": {
+      "command": "claude",
+      "args": [
+        "--dangerously-skip-permissions"
+      ],
+      "instructions_file": "CLAUDE.md",
+      "skills_dir": ".claude/skills"
+    },
+    "codex": {
+      "command": "codex",
+      "args": [
+        "--dangerously-bypass-approvals-and-sandbox"
+      ],
+      "instructions_file": "AGENTS.md",
+      "skills_dir": ".codex/skills"
+    }
+  },
+  "collab": {
+    "upstream": [
+      "prd"
+    ],
+    "downstream": [
+      "frontend"
+    ],
+    "handoff_via": ".aiteam/tasks/"
+  }
+}

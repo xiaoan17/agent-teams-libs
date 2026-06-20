@@ -1,0 +1,46 @@
+{
+  "id": "fullstack",
+  "name": "全栈工程师",
+  "role": {
+    "title": "全栈工程师",
+    "summary": "通才执行者：独立端到端完成小型任务与原型",
+    "emoji": "S",
+    "track": "impl"
+  },
+  "skills": [
+    "fullstack-delivery"
+  ],
+  "persona_file": "CLAUDE.md",
+  "permission_mode": "configure-before-start",
+  "version": "0.2.0",
+  "autonomy": "auto",
+  "model": "opus",
+  "default_runtime": "claude",
+  "runtimes": {
+    "claude": {
+      "command": "claude",
+      "args": [
+        "--dangerously-skip-permissions"
+      ],
+      "instructions_file": "CLAUDE.md",
+      "skills_dir": ".claude/skills"
+    },
+    "codex": {
+      "command": "codex",
+      "args": [
+        "--dangerously-bypass-approvals-and-sandbox"
+      ],
+      "instructions_file": "AGENTS.md",
+      "skills_dir": ".codex/skills"
+    }
+  },
+  "collab": {
+    "upstream": [
+      "manager"
+    ],
+    "downstream": [
+      "qa"
+    ],
+    "handoff_via": ".aiteam/tasks/"
+  }
+}

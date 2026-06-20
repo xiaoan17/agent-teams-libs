@@ -1,0 +1,52 @@
+{
+  "id": "qa",
+  "name": "测试 / QA 工程师",
+  "role": {
+    "title": "测试 / QA 工程师",
+    "summary": "质量守门员：验证产出是否符合验收标准，找 bug 不修 bug",
+    "emoji": "Q",
+    "track": "quality"
+  },
+  "skills": [
+    "qa-verification"
+  ],
+  "persona_file": "CLAUDE.md",
+  "permission_mode": "configure-before-start",
+  "version": "0.2.0",
+  "autonomy": "auto",
+  "model": "opus",
+  "default_runtime": "claude",
+  "runtimes": {
+    "claude": {
+      "command": "claude",
+      "args": [
+        "--dangerously-skip-permissions"
+      ],
+      "instructions_file": "CLAUDE.md",
+      "skills_dir": ".claude/skills"
+    },
+    "codex": {
+      "command": "codex",
+      "args": [
+        "--dangerously-bypass-approvals-and-sandbox"
+      ],
+      "instructions_file": "AGENTS.md",
+      "skills_dir": ".codex/skills"
+    }
+  },
+  "collab": {
+    "upstream": [
+      "backend",
+      "frontend",
+      "fullstack",
+      "prd"
+    ],
+    "downstream": [
+      "manager",
+      "backend",
+      "frontend",
+      "fullstack"
+    ],
+    "handoff_via": ".aiteam/tasks/"
+  }
+}
