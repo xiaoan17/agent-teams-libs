@@ -114,7 +114,24 @@ NN_xxx/
 
 ---
 
-## 六、说明
+## 六、引用与致谢（References & Acknowledgements）
+
+本仓库的部分 Agent 复用了社区开源的 skill。这些 skill 以 **vendored（内嵌副本）** 形式装进对应 Agent 的 `.claude/skills/` 与 `.codex/skills/` 目录，版权归原作者所有，在此致谢：
+
+| Skill | 用于 | 来源仓库 | 作者 / License |
+|-------|------|---------|----------------|
+| `logo-generator` | `07_design_human`（UI/UX 设计师） | https://github.com/op7418/logo-generator-skill | [@op7418](https://github.com/op7418) · MIT |
+| `baoyu-*`（`baoyu-image-gen` / `baoyu-cover-image` / `baoyu-article-illustrator` / `baoyu-xhs-images` / `baoyu-infographic` / `baoyu-comic` / `baoyu-slide-deck` / `baoyu-diagram`） | `07_design_human`（UI/UX 设计师） | https://github.com/JimLiu/baoyu-skills | 宝玉 (Baoyu) / [@JimLiu](https://github.com/JimLiu) |
+
+> 各 skill 的具体说明、依赖与配置见其所在目录下的 `SKILL.md` / `README.md`；`baoyu-*` 系列的清单另见 `07_design_human/.claude/skills/BAOYU-SKILLS-README.md`。
+>
+> 其余 skill（`tech-orchestration` / `prd-authoring` / `backend-api` / `frontend-ui` / `fullstack-delivery` / `qa-verification` / `data-analysis` / `eng-coordination` / `ui-ux-design`）为本项目自建的角色技能。
+
+如有遗漏或归属错误，欢迎提 issue 指正。
+
+---
+
+## 七、说明
 
 - 本仓库仅含**角色定义与配置**，不含任何业务代码或密钥。
 - 技能运行所需的本地依赖（Python `.venv/`、Node `node_modules/`）和密钥文件（`.env`）均已在 `.gitignore` 中排除，**不入库**。需要自行按各 skill 的 `.env.example` 配置。
